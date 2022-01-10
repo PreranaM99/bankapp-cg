@@ -53,17 +53,20 @@ public class CustomerService  {
 		//create a Role and insert it in DB
 		Role role = new Role();
 		role.setName("USER");
-		role= roleRepository.save(role);
-		//create List of Role 
-		List<Role> list = new ArrayList<>();
-		list.add(role);
 		
-		//attach the role list to user 
-		
-		user.setRoles(list);
+		user.setRole(role);
 		customer.setUserInfo(user);
 		
 		return customerRepository.save(customer);
+	}
+
+	public Customer getCustomerById(Long id) {
+
+		return customerRepository.getById(id);
+	}
+
+	public void deleteCustomer(Long id) {
+		customerRepository.deleteById(id);	
 	}
 
 }

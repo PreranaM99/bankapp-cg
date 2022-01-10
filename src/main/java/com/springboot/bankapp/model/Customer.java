@@ -88,5 +88,11 @@ public class Customer {
 		this.account = account;
 	}
 
+	@Override
+	public String toString() {
+		return "Customer [id=" + id + ", name=" + name + ", address=" + address + ", city=" + city + ", pan=" + pan
+				+ ", userInfo=" + userInfo + ", account=" + account + "]";
+	}
+
 	
 }

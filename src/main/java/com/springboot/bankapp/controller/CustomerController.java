@@ -2,6 +2,8 @@ package com.springboot.bankapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +18,10 @@ public class CustomerController {
 	@PostMapping("/customer")
 	public Customer postcustomer(@RequestBody Customer customer) {
 		return customerService.postcustomer(customer);
+	}
+	@DeleteMapping("/customer/{id}")
+	public void deleteCustomer(@PathVariable("id") Long id) {
+		customerService.deleteCustomer(id);
 	}
 
 }
