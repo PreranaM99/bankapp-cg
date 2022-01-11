@@ -33,5 +33,5 @@ public class CustomerController {
 		UserInfo user = customerService.getUserByName(principal.getName());
 		return user;
 	}
-
+	
 }
