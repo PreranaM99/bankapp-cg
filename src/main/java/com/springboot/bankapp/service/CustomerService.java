@@ -15,6 +15,7 @@ import com.springboot.bankapp.model.Role;
 import com.springboot.bankapp.model.UserInfo;
 import com.springboot.bankapp.repository.CustomerRepository;
 import com.springboot.bankapp.repository.RoleRepository;
+import com.springboot.bankapp.repository.UserRepository;
 
 @Service
 public class CustomerService  {
@@ -27,6 +28,9 @@ public class CustomerService  {
 	
 	@Autowired
 	private CustomerRepository customerRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
 	
 	public Customer postcustomer(Customer customer) {
 		//generate 10 digit account number
@@ -67,6 +71,10 @@ public class CustomerService  {
 
 	public void deleteCustomer(Long id) {
 		customerRepository.deleteById(id);	
+	}
+
+	public UserInfo getUserByName(String name) {
+		return userRepository.findByUsername(name);
 	}
 
 }
