@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.springboot.bankapp.model.Account;
 import com.springboot.bankapp.model.Transaction;
 import com.springboot.bankapp.repository.TransactionRepository;
 import com.springboot.bankapp.repository.UserRepository;
@@ -39,6 +40,14 @@ public class TransactionService {
 
 	public List<Transaction> fetchTransactionsByAccountNumber(String accountNumber) {
 		return transactionRepository.fetchTransactionsByAccountNumber(accountNumber);
+	}
+
+	public void depositAmount(String accountNumber, double amount) {
+		transactionRepository.depositAmount(accountNumber, amount);
+	}
+
+	public Account getAccountByAccountNumber(String accountNumber) {
+		return transactionRepository.getAccountByAccountNumber(accountNumber);
 	}
 
 }
