@@ -77,4 +77,12 @@ public class CustomerService  {
 		return userRepository.findByUsername(name);
 	}
 
+	public void putCustomer(String address, String city,Long id) {
+	customerRepository.putCustomer(address,city,id);
+	}
+	public Customer findByid(Long id) {
+		return customerRepository.getById(id);
+	}
+	
+
 }
